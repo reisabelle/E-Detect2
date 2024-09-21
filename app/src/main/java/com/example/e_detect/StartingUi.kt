@@ -133,8 +133,30 @@ class StartingUi : AppCompatActivity() {
         }
         imageView.setOnClickListener{
             val intent = Intent(this, status::class.java)
+            when (image) {
+                is Bitmap -> {
+                    val bitmapUri = saveImageToCache(image)  // Save to cache and get URI
+                    intent.putExtra("imageUri", bitmapUri.toString())
+                }
+                is Uri? -> {
+                    if (image != null) {
+                        intent.putExtra("imageUri", image.toString())
+                    }
+                }
+            }
             startActivity(intent)
         }
+    }
+
+    private fun saveImageToCache(bitmap: Bitmap): Uri {
+        val cachePath = File(cacheDir, "images")
+        cachePath.mkdirs() // Create the directory if it doesn't exist
+        val file = File(cachePath, "image.png")
+        val fileOutputStream = FileOutputStream(file)
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream)
+        fileOutputStream.flush()
+        fileOutputStream.close()
+        return Uri.fromFile(file)
     }
 
     private fun saveImageToStorage(bitmap: Bitmap) {
