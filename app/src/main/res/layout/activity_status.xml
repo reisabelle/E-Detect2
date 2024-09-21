@@ -22,45 +22,23 @@
         app:title="Status"
         app:titleCentered="true" />
 
+
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="230dp"
-        android:layout_height="212dp"
-        android:layout_marginTop="37dp"
-        android:layout_marginEnd="28dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="622dp"
+        app:layout_constraintBottom_toTopOf="@+id/L1"
         app:layout_constraintTop_toBottomOf="@+id/materialToolbar"
-        app:srcCompat="@drawable/ic_launcher_background" />
-
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="79dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="101dp"
-        android:hint="Healthy or Unhealthy"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar"
-        app:layout_constraintVertical_bias="0.051" />
-
-    <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            tools:ignore="MissingConstraints">
-
-        </RelativeLayout>
+        app:srcCompat="@drawable/ic_launcher_background"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp" />
 
     <ImageView
         android:id="@+id/backbtn"
         android:layout_width="36dp"
         android:layout_height="33dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/baseline_arrow_back_24" />
@@ -69,8 +47,9 @@
         android:id="@+id/L1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/L2"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
         tools:layout_editor_absoluteX="0dp">
 
         <TextView
@@ -80,6 +59,7 @@
             android:layout_margin="5dp"
             android:text="Disease: "
             android:textColor="#000"
+            android:textSize="20dp"
             android:textStyle="bold" />
 
         <TextView
@@ -88,59 +68,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_toEndOf="@+id/disLabel"
-            android:hint="Disease" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/L3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="280dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="0dp">
-
-        <TextView
-            android:id="@+id/treatLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="Treatment: "
-            android:textColor="#000"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/treatment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_toEndOf="@id/treatLabel"
-            android:hint="Treatment" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/L2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/L3"
-        tools:layout_editor_absoluteX="0dp">
-
-        <TextView
-            android:id="@+id/symLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="Symptoms: "
-            android:textColor="#000"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/symptoms"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_toEndOf="@id/symLabel"
-            android:hint="Symptoms" />
+            android:hint="Disease"
+            android:textSize="20dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
